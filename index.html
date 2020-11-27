@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="initGame()">
+    <div class="game-board">
+
+        <h1>Minesweeper</h1>
+        <div class="game-info-container">
+            <div class="game-info">
+                <span class="stopwatch">| Time: <b>00:00</b> | </span>
+                <div class="buttons">
+                    <button onclick="restart(16, 2)">Beginner</button>
+                    <button onclick="restart(64, 12)">Medium</button>
+                    <button onclick="restart(144, 30)">Expert</button>
+                </div>
+                <div>
+                    <span class="flags">🚩<span class="flags-count">XX</span></span>
+                    <p class="smiley" onclick="restart()">😄</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="timer"></div>
+        <div class="game-table-container">
+            <table class="game-table">
+                <tbody class="board" oncontextmenu="return false">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="flex-container">
+            <div class="safe">
+                <h4>Safe Clicks:</h4>
+                <div class="safe-clicks"><span onclick="findSafeCell(this)">👌</span><span
+                        onclick="findSafeCell(this)">👌</span><span onclick="findSafeCell(this)">👌</span></span>
+                </div>
+            </div>
+            <div class="light">
+                <h4>Hints:</h4>
+                <div class="light-bulb"><span onclick="useHint(this)">💡</span><span
+                        onclick="useHint(this)">💡</span><span onclick="useHint(this)">💡</span></span>
+                </div>
+            </div>
+            <div class="lives">
+                <h4>Lives:</h4>
+                <span class="hearts-span"><span class="hearts">❤️</span><span class="hearts">❤️</span>
+                    <span class="hearts">❤️
+                    </span></span>
+            </div>
+        </div>
+        <!-- <div class="best-time">
+            <h4>Your best time is: <span></span></h4>
+        </div> -->
+        
+            <div class="modal">
+                <h3><span></span></h3>
+                <button onclick="initGame(), closeModal(), pauseTime()">Play Again</button>
+            </div>
+
+
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
